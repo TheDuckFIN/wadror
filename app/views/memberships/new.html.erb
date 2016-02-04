@@ -1,0 +1,25 @@
+<h1>Join a club</h1>
+
+<%= form_for(@membership) do |f| %>
+
+	<% if @membership.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@membership.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+			<ul>
+				<% @membership.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.select :beer_club_id, options_from_collection_for_select(@clubs, :id, :to_s) %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit 'Join club!' %>
+	</div>
+
+<% end %>
