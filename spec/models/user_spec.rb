@@ -86,7 +86,6 @@ RSpec.describe User, type: :model do
 
 			expect(user.favorite_style).to eq(best.style)
 		end
-
 	end
 
 	describe "favorite beer" do
