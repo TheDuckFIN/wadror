@@ -6,6 +6,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'sqlite3'
   gem 'better_errors'
+  gem 'travis'
 end
 
 group :test do
