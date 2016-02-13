@@ -8,9 +8,15 @@ group :development, :test do
   gem 'better_errors'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+end
+
 group :production do
-   gem 'pg'
-   gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'bcrypt', '~> 3.1.7'
