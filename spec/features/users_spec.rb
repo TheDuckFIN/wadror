@@ -3,11 +3,9 @@ require 'rails_helper'
 include Helpers
 
 describe "User" do
-  before :each do
-    FactoryGirl.create :user
-  end
-
   describe "who has signed up" do
+    let!(:user) { FactoryGirl.create :user }
+
     it "can signin with right credentials" do
       sign_in(username:"Pekka", password:"Foobar1")
 
@@ -33,5 +31,29 @@ describe "User" do
       }.to change{User.count}.by(1)
     end
 
+    it "has favourite style listed on the page" do
+      create_stuff
+
+      visit user_path(user)
+
+      expect(page).to have_content "Favourite beer style: IPA"
+    end
+
+    it "has favourite brewery listed on the page" do
+      create_stuff
+
+      visit user_path(user)
+
+      expect(page).to have_content "Favourite brewery: fav"
+    end
   end
+end
+
+def create_stuff
+  brewery1 = FactoryGirl.create :brewery
+  brewery2 = FactoryGirl.create :brewery, name:"fav"
+  beer1 = FactoryGirl.create :beer, brewery:brewery1
+  beer2 = FactoryGirl.create :beer, style:"IPA", brewery:brewery2
+  FactoryGirl.create :rating, user:user, beer:beer1, score:15
+  FactoryGirl.create :rating, user:user, beer:beer2, score:20
 end
