@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :beers
   resources :breweries
   resources :ratings, only: [:index, :new, :create, :destroy]
+  resources :places, only: [:index, :show]
 
   resource :session, only: [:new, :create, :destroy]
 
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
 
   #post 'ratings', to: 'ratings#create'
 
-  get 'places', to: 'places#index'
   post 'places', to: 'places#search'
 
   get 'joinclub', to: 'memberships#new'
