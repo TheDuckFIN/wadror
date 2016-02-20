@@ -14,12 +14,15 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', require: false
+  gem 'webmock'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'httparty'
 
 gem 'bcrypt', '~> 3.1.7'
 

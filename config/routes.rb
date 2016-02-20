@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   #post 'ratings', to: 'ratings#create'
 
+  get 'places', to: 'places#index'
+  post 'places', to: 'places#search'
+
   get 'joinclub', to: 'memberships#new'
   get 'signup', to: 'users#new'
   get 'signin', to: 'sessions#new'
