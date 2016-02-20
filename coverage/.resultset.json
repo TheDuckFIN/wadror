@@ -336,6 +336,9 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -667,6 +670,14 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/home/vlakanie/GitHub/ratebeer/app/controllers/memberships_controller.rb": [
@@ -746,9 +757,10 @@
         0,
         0,
         0,
+        0,
         0
       ]
     },
-    "timestamp": 1455988326
+    "timestamp": 1456003448
   }
 }
