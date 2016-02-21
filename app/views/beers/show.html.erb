@@ -6,7 +6,7 @@
 
 <p>
   <strong>Style:</strong>
-  <%= @beer.style %><br />
+  <%= link_to @beer.style.name, @beer.style %><br />
 
   <strong>Brewery:</strong>
   <%= link_to @brewery.name, @brewery %>

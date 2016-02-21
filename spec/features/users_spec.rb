@@ -53,7 +53,8 @@ def create_stuff
   brewery1 = FactoryGirl.create :brewery
   brewery2 = FactoryGirl.create :brewery, name:"fav"
   beer1 = FactoryGirl.create :beer, brewery:brewery1
-  beer2 = FactoryGirl.create :beer, style:"IPA", brewery:brewery2
+  style = FactoryGirl.create :style, name:"IPA"
+  beer2 = FactoryGirl.create :beer, style:style, brewery:brewery2
   FactoryGirl.create :rating, user:user, beer:beer1, score:15
   FactoryGirl.create :rating, user:user, beer:beer2, score:20
 end

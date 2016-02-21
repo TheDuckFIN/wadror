@@ -6,6 +6,8 @@ describe "Beer" do
 
 	before :each do
 		FactoryGirl.create(:user)
+		FactoryGirl.create(:brewery)
+		FactoryGirl.create(:style)
 		sign_in(username:"Pekka", password:"Foobar1")
 	end
 
