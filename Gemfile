@@ -7,6 +7,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'travis'
+  gem 'rails_layout'
 end
 
 group :test do
@@ -23,6 +24,8 @@ group :production do
 end
 
 gem 'httparty'
+
+gem 'bootstrap-sass'
 
 gem 'bcrypt', '~> 3.1.7'
 
