@@ -16,7 +16,7 @@ describe "Rating" do
     create_ratings
 
     visit ratings_path
-    expect(page).to have_content "Number of ratings: #{Rating.count}"
+    expect(page).to have_content "Total number of ratings: #{Rating.count}"
 
     Rating.all.each do |rating|
       expect(page).to have_content rating

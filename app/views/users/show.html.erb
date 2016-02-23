@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @user.username %></h1>
+<h2><%= @user.username %></h2>
 
 <% if @user.beer_clubs.empty? %>
 	<p>Has no beer club memberships!</p>
@@ -22,7 +20,7 @@
 	</p>
 	<p>Has rated <%= pluralize(@user.ratings.count, "beer") %>, average <%= @user.average_rating %>
 
-	<h2>Ratings</h2>
+	<h3>Ratings</h3>
 	
 	<ul>
 	<% @user.ratings.each do |rating| %>

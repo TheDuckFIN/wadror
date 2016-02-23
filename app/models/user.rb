@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 	validates :username, uniqueness: true, length: { minimum: 3, maximum: 15 }
 	validates :password, format: { with: /\A(?=.*[A-Z])(?=.*[0-9]).{4,}\z/ }
 
+	def self.top_raters(n)
+		User.all.sort_by{ |u| -(u.ratings.count||0) }.first(n)
+	end
+
 	def favorite_beer
 		return nil if ratings.empty?
     	ratings.order(score: :desc).limit(1).first.beer
