@@ -10,7 +10,7 @@
     <% top.each do |v| %>
       <tr>
         <td><%= link_to v.name, v %></td>
-        <td><%= v.average_rating %></td>
+        <td><%= round(v.average_rating)||"not rated" %></td>
       </tr>
     <% end %>
   </tbody>

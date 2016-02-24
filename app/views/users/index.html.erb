@@ -1,7 +1,24 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Users</h1>
 
-<% @users.each do |user| %>
-    <%= link_to user.username, user %> <br>
-<% end %>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="col-md-9">User</th>
+            <th class="col-md-3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= link_to user.username, user %></td>
+            <td>
+                <% if user.banned %>
+                    <span class="label label-info">Account frozen</span>
+                <% end %>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+

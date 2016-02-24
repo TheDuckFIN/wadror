@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :toggle_ban]
+  before_action :ensure_that_user_admin, only: :toggle_ban
 
   # GET /users
   # GET /users.json
@@ -10,6 +11,15 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+  end
+
+  def toggle_ban
+    user = User.find(params[:id])
+    user.update_attribute :banned, (not user.banned)
+
+    new_status = user.banned? ? "frozen" : "unfrozen"
+
+    redirect_to :back, notice:"User has been #{new_status}"
   end
 
   # GET /users/new

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 
 	helper_method :current_user
+	helper_method :is_admin
 
 	def current_user
 		return nil if session[:user_id].nil?
@@ -11,6 +12,15 @@ class ApplicationController < ActionController::Base
 	end
 
 	def ensure_that_signed_in
-		redirect_to signin_path, notice:'you should be signed in' if current_user.nil?
+		redirect_to signin_path, notice:'You should be signed in' if current_user.nil?
+	end
+
+	def ensure_that_user_admin
+		redirect_to :back, notice:'You need to be admin to do this' if not is_admin
+	end
+
+	def is_admin
+		return false if current_user.nil?
+		return current_user.admin
 	end
 end
