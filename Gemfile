@@ -16,6 +16,8 @@ group :test do
   gem 'launchy'
   gem 'simplecov', require: false
   gem 'webmock'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :production do
@@ -26,6 +28,8 @@ end
 gem 'httparty'
 
 gem 'bootstrap-sass'
+
+gem 'jquery-turbolinks'
 
 gem 'bcrypt', '~> 3.1.7'
 
