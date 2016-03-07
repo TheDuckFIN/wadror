@@ -25,6 +25,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'rack-mini-profiler'
+
 gem 'httparty'
 
 gem 'bootstrap-sass'

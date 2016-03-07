@@ -2,6 +2,11 @@ class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
   before_action :ensure_that_signed_in, except: [:index, :show, :list]
   before_action :ensure_that_user_admin, only: :destroy
+  before_action :expire_cache, only: [:update, :create, :destroy, :toggle_activity]
+
+  def expire_cache
+    ["brewerylist-name", "brewerylist-year"].each{ |f| expire_fragment(f) }
+  end
 
   def list
   end

@@ -3,7 +3,9 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th class="col-md-9">User</th>
+            <th class="col-md-5">User</th>
+            <th class="col-md-2">Rated beers</th>
+            <th class="col-md-2">Total ratings</th>
             <th class="col-md-3"></th>
         </tr>
     </thead>
@@ -12,6 +14,8 @@
     <% @users.each do |user| %>
         <tr>
             <td><%= link_to user.username, user %></td>
+            <td><%= user.beers.size %></td>
+            <td><%= user.ratings.size %></td>
             <td>
                 <% if user.banned %>
                     <span class="label label-info">Account frozen</span>
