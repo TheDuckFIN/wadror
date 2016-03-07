@@ -3,8 +3,6 @@ rvm:
 - 2.3.0
 env:
 - APIKEY=fd9b62fec0e8fc51ba345b2ff1803091
-- GITHUB_KEY="cab8369ee2e3449d937a"
-- GITHUB_SECRET="b7b6fca84614e7c5ea0ab9ec6ace30c7d14b9edf"
 before_script:
 - "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"
