@@ -25,6 +25,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'omniauth-github'
+
 gem 'rack-mini-profiler'
 
 gem 'httparty'

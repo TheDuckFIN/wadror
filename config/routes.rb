@@ -41,6 +41,8 @@ Rails.application.routes.draw do
   get 'ngbeerlist', to:'beers#nglist'
   get 'brewerylist', to:'breweries#list'
 
+  get 'auth/:provider/callback', to: 'sessions#create_oauth'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
