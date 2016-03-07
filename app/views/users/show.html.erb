@@ -5,15 +5,32 @@
 	<% end %>
 </h2>
 
+<h3>Beer clubs</h3>
+
 <% if @user.beer_clubs.empty? %>
 	<p>Has no beer club memberships!</p>
 <% else %>
-	<p>
-		member of 
-		<% @user.beer_clubs.each do |club| %>
-			<%= link_to club.name, club %>
-		<% end %>
-	</p>
+	<% if !@user.confirmed_memberships.empty? %>
+		<p>
+			<b>member of</b> 
+			<ul>	
+				<% @user.confirmed_memberships.each do |membership| %>
+					<li><%= link_to membership.beer_club.name, membership.beer_club %></li>
+				<% end %>
+			</ul>
+		</p>
+	<% end %>
+
+	<% if !@user.unconfirmed_memberships.empty? %>
+		<p>
+			<b>applied membership of</b> 
+			<ul>	
+				<% @user.unconfirmed_memberships.each do |membership| %>
+					<li><%= link_to membership.beer_club.name, membership.beer_club %></li>
+				<% end %>
+			</ul>
+		</p>
+	<% end %>
 <% end %>
 
 <% if @user.ratings.empty? %>

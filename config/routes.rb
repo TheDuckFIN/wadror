@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   resources :styles
-  resources :memberships
   resources :beer_clubs
   resources :beers
   resources :ratings, only: [:index, :new, :create, :destroy]
   resources :places, only: [:index, :show]
+
+  resources :memberships do
+    post 'confirm', on: :member
+  end
 
   resources :users do
     post 'toggle_ban', on: :member

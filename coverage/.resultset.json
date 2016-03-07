@@ -136,6 +136,9 @@
         1,
         null,
         1,
+        1,
+        null,
+        1,
         2,
         null,
         null,
@@ -333,11 +336,19 @@
       "/home/vlakanie/GitHub/ratebeer/app/models/beer_club.rb": [
         1,
         1,
+        null,
+        1,
+        1,
+        null,
         1,
         null,
         1,
         1,
         1,
+        null,
+        1,
+        0,
+        null,
         null,
         1,
         0,
@@ -832,6 +843,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/home/vlakanie/GitHub/ratebeer/app/controllers/memberships_controller.rb": [
@@ -912,9 +925,16 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ]
     },
-    "timestamp": 1457290080
+    "timestamp": 1457360442
   }
 }
